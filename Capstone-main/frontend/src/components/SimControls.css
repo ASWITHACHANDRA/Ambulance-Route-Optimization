@@ -1,0 +1,344 @@
+/* SimControls.css */
+
+.sim-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── State badge ──────────────────────────────────────────────────────────── */
+
+.sim-state-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sim-state-badge--idle {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  color: #57606a;
+}
+
+.sim-state-badge--starting {
+  background: #ddf4ff;
+  border: 1px solid #54aeff;
+  color: #0969da;
+  animation: pulse-blue 1s ease-in-out infinite;
+}
+
+.sim-state-badge--running {
+  background: #dafbe1;
+  border: 1px solid #4ac26b;
+  color: #1a7f37;
+}
+
+.sim-state-badge--arrived {
+  background: #fbefff;
+  border: 1px solid #d4a5ff;
+  color: #8250df;
+}
+
+.sim-state-badge--error {
+  background: #ffebe9;
+  border: 1px solid #ff8182;
+  color: #cf222e;
+}
+
+@keyframes pulse-blue {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+/* ── Form fields ──────────────────────────────────────────────────────────── */
+
+.sim-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sim-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sim-select {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: 13px;
+  padding: 8px 10px;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.sim-select:focus {
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+/* ── Slider ─────────────────────────────────────────────────────────────── */
+
+.sim-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sim-slider {
+  flex: 1;
+  accent-color: var(--color-accent-blue);
+  cursor: pointer;
+}
+
+.sim-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  background: #ffffff;
+  color: var(--color-text-primary);
+  font-size: 13px;
+  resize: vertical;
+  font-family: inherit;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.sim-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+.sim-textarea:disabled {
+  opacity: 0.5;
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+.sim-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.sim-vitals-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.sim-vitals-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.sim-vitals-toggle:hover:not(:disabled) {
+  background: #f9f9f9;
+  border-color: #b9c1c9;
+}
+
+.sim-vitals-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sim-vitals-toggle-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim-vitals-toggle-hint {
+  font-size: 11px;
+  font-weight: 400;
+  color: #8b949e;
+}
+
+.sim-vitals-hint {
+  margin: 5px 0 0;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+.sim-vitals-error {
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(239,68,68,0.15);
+  border: 1px solid rgba(239,68,68,0.4);
+  color: #fca5a5;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+.sim-vitals-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sim-vitals-item span {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sim-vitals-input {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  background: #ffffff;
+  color: var(--color-text-primary);
+  font-size: 13px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.sim-vitals-input:focus {
+  outline: none;
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+.sim-vitals-input:disabled {
+  opacity: 0.5;
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Remove number spinner arrows */
+.sim-vitals-input::-webkit-outer-spin-button,
+.sim-vitals-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+.sim-slider-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-accent-blue);
+  min-width: 28px;
+  text-align: right;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+
+.sim-btn {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sim-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.sim-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sim-btn--start {
+  background: #2da44e;
+  border: 1px solid #2da44e;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(45, 164, 78, 0.2);
+}
+.sim-btn--start:hover:not(:disabled) {
+  background: #2c974b;
+  border-color: #2c974b;
+  box-shadow: 0 4px 8px rgba(45, 164, 78, 0.3);
+}
+
+.sim-btn--stop {
+  background: #ffffff;
+  border: 1px solid #cf222e;
+  color: #cf222e;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.sim-btn--stop:hover:not(:disabled) {
+  background: #fff8f8;
+  border-color: #a40e26;
+  color: #a40e26;
+}
+
+.sim-btn--reroute {
+  background: #ffffff;
+  border: 1px solid #bf8700;
+  color: #bf8700;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.sim-btn--reroute:hover:not(:disabled) {
+  background: #fffdf5;
+  border-color: #996c00;
+  color: #996c00;
+}
+
+.sim-btn--reset {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  padding: 8px 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+.sim-btn--reset:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #b9c1c9;
+  color: var(--color-text-primary);
+}
+
+.sim-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sim-loading {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
